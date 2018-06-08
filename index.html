@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exo serie</title>
+</head>
+<body>
+<p>Exo 1</p>
+<form action="">
+    <input type="text" placeholder="premier nombre" value="">
+    <input type="text" placeholder="deuxieme nombre" value="">
+    <input type="button" value="multiplier">
+</form>
+<p>exo 2</p>
+<form action="">
+    <input type="text" placeholder="couleur" value="">
+    <input type="button" value="Changer Couleur">
+</form>
+<p>exo 3</p>
+<form action="">
+    <input type="text" placeholder="rentrer URL" value="">
+    <input type="button" value="Charger image">
+</form>
+<img class="paraImage" src="" alt="">
+<p>exo 4</p>
+<form action="">
+    <input type="text" placeholder="rentrer nombre">
+    <input type="button" value="diviser par 5">
+</form>
+<p>exo 5</p>
+<form action="">
+    <input type="text" placeholder="age" value="">
+    <input type="button" value="nombre de jours">
+</form>
+<p>exo 6</p>
+<form action="">
+    <input type="text" placeholder="age actuel">
+    <input type="text" placeholder="age visé">
+    <input type="button" value="Voir différence">
+</form>
+<p>exo 7</p>
+<img class="confirmImage" src="" alt="">
+<p>exo 8</p>
+<form action="">
+    <input type="text" placeholder="rentrer nombre entre 1 et 5">
+    <input type="button" value="convertir">
+</form>
+<script>
+    //===========Exo 1==================================
+    document.getElementsByTagName("input")[2].addEventListener("click",multiplier);
+    function multiplier() {
+        var a=document.getElementsByTagName("input")[0].value;
+        var b=document.getElementsByTagName("input")[1].value;
+        alert(a+" multiplié par "+b+" vaut "+a*b);
+    }
+
+    //=============Exo 2==================================
+    document.getElementsByTagName("input")[4].addEventListener("click",changer);
+    function changer() {
+        var c=document.getElementsByTagName("input")[3].value;
+        document.body.style.backgroundColor=c;
+    }
+
+    //=============Exo3===================================
+    document.getElementsByTagName("input")[6].addEventListener("click",imageCharge);
+    function imageCharge() {
+        var d=document.getElementsByTagName("input")[5].value;
+        document.getElementsByClassName("paraImage")[0].src=d;
+    }
+
+    //============Exo 4=====================================
+    document.getElementsByTagName("input")[8].addEventListener("click",demanderReste);
+    function demanderReste() {
+        var e=document.getElementsByTagName("input")[7].value;
+        var f=e % 5;
+        alert("Si l'on divise "+e+" par 5, le reste est de "+f);
+    }
+
+    //==============Exo 5 =====================================
+    document.getElementsByTagName("input")[10].addEventListener("click",nombreJour);
+    function nombreJour() {
+        var g=document.getElementsByTagName("input")[9].value;
+        var h=365*g;
+        alert("Vous avez vécu "+h+" jours.");
+    }
+
+    //=============Exo 6====================================
+    document.getElementsByTagName("input")[13].addEventListener("click",voirDifference);
+    function voirDifference() {
+        var i=document.getElementsByTagName("input")[11].value;
+        var j=document.getElementsByTagName("input")[12].value;
+        if (j>i) {
+            var k = 365 * i;
+            var l = (365 * j) - k;
+            alert("Vous avez vécu " + k + " jours. Il y a encore " + l + " jours avant vos "+j+" ans.")
+        }
+        else{
+            alert("age visé plus petit que age actuel");
+        }
+    }
+
+    //=============Exo 7======================================
+    window.addEventListener("load",caVa);
+    function caVa() {
+        var chargement=window.confirm("Ca va?");
+        if(chargement){
+            document.getElementsByClassName("confirmImage")[0].src="https://rlv.zcache.ca/sticker_rond_visage_enorme_de_smiley_de_sourire-r5d08d7faccfc4b769cb47124974583f1_v9waf_8byvr_540.jpg";
+        }
+        else{
+            document.getElementsByClassName("confirmImage")[0].src="http://igil.info/wp-content/uploads/2018/04/smiley-anime-qui-pleure-epingle-par-lady-vodka-sur-it-s-all-about-emojis-of-smiley-anime-qui-pleure.jpg";
+        }
+    }
+
+    //===========Exo 8=======================================
+    document.getElementsByTagName("input")[15].addEventListener("click",convertirLettre);
+    function convertirLettre() {
+        var m=document.getElementsByTagName("input")[14].value;
+        if(m>=0 & m<=5){
+            if(m==0){
+                alert("zéro")
+            }
+            if else(m==1){
+                alert("un");
+            }
+            if else(m==2){
+                alert("deux");
+            }
+            if else(m==3){
+                alert("trois");
+            }
+            if else(m==4){
+                alert("quatre");
+            }
+            else{
+                alert("cinq");
+            }
+        else{
+                alert("choisir entre 0 et 5");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
